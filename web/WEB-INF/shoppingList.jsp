@@ -14,19 +14,29 @@
     </head>
     <body>
         <h1>Shopping List</h1
-        <p>Hello, ${username} <a href></a></p>
+        <p>Hello, ${user} <a href="<c:url value="/ShoppingList">
+                                 <c:param name="action" value="logout" />
+                             </c:url>">
+                                 Logout</a></p>
         <h2>List</h2>
-        <form method="post" action="ShoppingList">
-            <p>Add item: <input type="text" name="item"> <input type="submit" name="add" value="Add"></p>
+        <form method="post" action="">
+            <p>Add item: <input type="text" name="item"><input type="submit" Value="Add">
+            <input type="hidden" name="action" value="add"></p>
         </form>
-        <form method="post" action="ShoppingList">
+        <form method="post" action="">
             <table>
-                <tr>
-                    <c:forEach items=""
-                </tr>
+                <c:forEach items="${list}" var="list">
                 <tr>
                     <td>
-                        <input type="submit" name="delete" value="delete">
+                        <input type="radio" name="listitem" value="${list}">
+                        ${list}
+                    </td>
+                </tr>
+                </c:forEach>
+                <tr>
+                    <td>
+                        <input type="submit" value="Delete">
+                        <input type="hidden" name="action" value="delete">
                     </td>
                 </tr>
             </table>

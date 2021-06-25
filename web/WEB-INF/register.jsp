@@ -23,7 +23,8 @@
                 <input type="text" name="username">
                 </tr>
                 <tr>
-                <input type ="submit" value="Register name" name="register">
+                <input type ="submit" value="Register name">
+                <input type="hidden" name="action" value="register">
                 </tr>
                 </td>
             </table>
